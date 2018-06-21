@@ -6,10 +6,21 @@
   </head>
   <body>
     Well hey there!!!
-
+    <div id="blocklyDiv" style="height: 500px; width: 500px;"></div>
+    <xml id="toolbox" style="display: none">
+  <block type="controls_if"></block>
+  <block type="controls_repeat_ext"></block>
+  <block type="logic_compare"></block>
+  <block type="math_number"></block>
+  <block type="math_arithmetic"></block>
+  <block type="text"></block>
+  <block type="text_print"></block>
+</xml>
     <script>
       function init() {
         require('./renderer.js');
+        workspace = Blockly.inject('blocklyDiv',
+              {toolbox: document.getElementById('toolbox')});
       }
     </script>
     <script src="lib/blockly/blockly_compressed.js" onload="javascript:init();"></script>
