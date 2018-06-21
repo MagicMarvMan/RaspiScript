@@ -22,7 +22,7 @@
 	      "test": "echo \"Error: No test specified\""
     },
     "keywords": [],
-    "author": "marvin",
+    "author": "MagicMarvMan",
     "license": "MIT",
     "config": {
         "forge": {
@@ -47,8 +47,8 @@
             "electronInstallerDebian": {},
             "electronInstallerRedhat": {},
             "github_repository": {
-                "owner": "",
-                "name": ""
+                "owner": "RaspiScript",
+                "name": "RaspiScript"
             },
             "windowsStoreConfig": {
                 "packageName": "",
