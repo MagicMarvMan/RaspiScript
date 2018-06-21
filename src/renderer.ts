@@ -1,2 +1,2 @@
 
-const Blockly: Blockly = require('node-blockly');
+alert("Suc");
