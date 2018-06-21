@@ -5,7 +5,7 @@
     "description": "My Electron application description",
     "main": "dist/index.js",
     "scripts": {
-        "build": "rm -r dist && tsc && mkdir dist/lib && mkdir dist/lib/blockly && cp -r src/lib/* dist/lib && yarn run move-html",
+        "build": "rm -f -r -- dist && tsc && mkdir dist/lib && mkdir dist/lib/blockly && cp -r src/lib/* dist/lib && yarn run move-html",
         "watch": "tsc -w",
         "lint-ts": "tslint -c tslint.json -p tsconfig.json",
         "lint-es": "eslint src",
