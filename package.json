@@ -19,7 +19,8 @@
         "minify-renderer": "node-minify --compressor all --input 'dist/renderer.js' --output 'dist/renderer.js'",
         "minify": "yarn run minify-index && yarn run minify-renderer",
 	      "setup": "yarn install",
-	      "test": "echo \"Error: No test specified\""
+	      "test": "echo \"Error: No test specified\"",
+        "publish": "electron-forge publish"
     },
     "keywords": [],
     "author": "MagicMarvMan",
