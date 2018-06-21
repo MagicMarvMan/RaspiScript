@@ -11,52 +11,20 @@
         "lint-es": "eslint src",
         "lint": "yarn run lint-es && yarn run lint-ts",
         "lint-fix": "yarn run lint-es --fix && yarn run lint-ts --fix",
-        "start": "yarn run build && electron-forge start",
-        "package": "yarn run build && electron-forge package",
+        "start": "yarn run build && electron .",
+        "package": "yarn run build && electron-builder .",
         "make": "yarn run build && electron-forge make",
         "move-html": "cp src/*.html dist",
         "minify-index": "node-minify --compressor all --input 'dist/index.js' --output 'dist/index.js'",
         "minify-renderer": "node-minify --compressor all --input 'dist/renderer.js' --output 'dist/renderer.js'",
         "minify": "yarn run minify-index && yarn run minify-renderer",
-	      "setup": "yarn install",
-	      "test": "echo \"Error: No test specified\"",
-        "publish": "electron-forge publish"
+        "setup": "yarn install",
+        "test": "echo \"Error: No test specified\"",
+        "publish": "echo '\"yarn run publish\" is deprecated. Publishing will be done automatically. Skipping.'"
     },
     "keywords": [],
     "author": "MagicMarvMan",
     "license": "MIT",
-    "config": {
-        "forge": {
-            "make_targets": {
-                "win32": [
-                    "squirrel"
-                ],
-                "darwin": [
-                    "zip"
-                ],
-                "linux": [
-                    "deb",
-                    "rpm"
-                ]
-            },
-            "electronPackagerConfig": {
-                "packageManager": "yarn"
-            },
-            "electronWinstallerConfig": {
-                "name": "raspiscript"
-            },
-            "electronInstallerDebian": {},
-            "electronInstallerRedhat": {},
-            "github_repository": {
-                "owner": "RaspiScript",
-                "name": "RaspiScript"
-            },
-            "windowsStoreConfig": {
-                "packageName": "",
-                "name": "raspiscript"
-            }
-        }
-    },
     "dependencies": {
         "electron-compile": "^6.4.2",
         "google-blockly": "^1.0.0",
@@ -66,7 +34,9 @@
         "babel-plugin-transform-async-to-generator": "6.24.1",
         "babel-preset-env": "1.7.0",
         "babel-preset-react": "6.24.1",
-        "electron-forge": "5.2.2",
+        "electron": "^2.0.3",
+        "electron-builder": "^20.15.1",
+        "electron-packager": "^12.1.0",
         "electron-prebuilt-compile": "2.0.2",
         "eslint": "4.19.1",
         "eslint-config-airbnb": "16.1.0",
