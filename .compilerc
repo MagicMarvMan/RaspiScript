@@ -1,6 +1,9 @@
 {
   "env": {
     "development": {
+      "application/xml": {
+        "passthrough": true
+      },
       "application/javascript": {
         "presets": [
           [
@@ -20,6 +23,9 @@
       }
     },
     "production": {
+      "application/xml": {
+        "passthrough": true
+      },
       "application/javascript": {
         "presets": [
           [
