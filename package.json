@@ -5,10 +5,15 @@
     "description": "My Electron application description",
     "main": "src/index.js",
     "scripts": {
-        "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
-        "lint": "eslint src"
+        "build": "tsc",
+        "watch": "tsc -w",
+        "lint-ts": "tslint -c tslint.json -p tsconfig.json",
+        "lint-es": "eslint src",
+        "lint": "yarn run lint-es && yarn run lint-ts",
+        "lint-fix": "yarn run lint-es --fix && yarn run lint-ts --fix",
+        "start": "yarn run build && electron-forge start",
+        "package": "yarn run build && electron-forge package",
+        "make": "yarn run build && electron-forge make"
     },
     "keywords": [],
     "author": "marvin",
@@ -55,9 +60,11 @@
         "electron-forge": "5.2.2",
         "electron-prebuilt-compile": "2.0.2",
         "eslint": "4.19.1",
-        "eslint-config-airbnb": "15.1.0",
+        "eslint-config-airbnb": "16.1.0",
         "eslint-plugin-import": "2.12.0",
         "eslint-plugin-jsx-a11y": "5.1.1",
-        "eslint-plugin-react": "7.9.1"
+        "eslint-plugin-react": "7.9.1",
+        "tslint": "^5.10.0",
+        "typescript": "^2.8.3"
     }
 }
