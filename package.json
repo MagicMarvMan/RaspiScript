@@ -3,9 +3,9 @@
     "productName": "raspiscript",
     "version": "1.0.0",
     "description": "My Electron application description",
-    "main": "src/index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "build": "tsc",
+        "build": "rm -r dist && tsc && yarn run move-html",
         "watch": "tsc -w",
         "lint-ts": "tslint -c tslint.json -p tsconfig.json",
         "lint-es": "eslint src",
@@ -13,7 +13,11 @@
         "lint-fix": "yarn run lint-es --fix && yarn run lint-ts --fix",
         "start": "yarn run build && electron-forge start",
         "package": "yarn run build && electron-forge package",
-        "make": "yarn run build && electron-forge make"
+        "make": "yarn run build && electron-forge make",
+        "move-html": "cp src/*.html dist",
+        "minify-index": "node-minify --compressor all --input 'dist/index.js' --output 'dist/index.js'",
+        "minify-renderer": "node-minify --compressor all --input 'dist/renderer.js' --output 'dist/renderer.js'",
+        "minify": "yarn run minify-index && yarn run minify-renderer"
     },
     "keywords": [],
     "author": "marvin",
