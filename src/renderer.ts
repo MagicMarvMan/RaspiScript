@@ -9,3 +9,6 @@ console.log(Blockly)
 
 alert("Suc");
 let workspace: any = new Blockly.Workspace()
+let editor: any = Blockly.inject(element, {
+  toolbox: document.getElementById('toolbox')
+})

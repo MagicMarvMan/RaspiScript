@@ -5,9 +5,10 @@
     "description": "My Electron application description",
     "main": "dist/index.js",
     "scripts": {
+        "rebuild": "electron-rebuild .",
         "rm-dist": "rm -r -f -- dist",
         "load-submodules": "git submodule update",
-        "build": "yarn rm-dist && yarn load-submodules && tsc && mkdir dist/lib && mkdir dist/lib/blockly && yarn run move-html",
+        "build": "yarn rm-dist && yarn load-submodules && tsc && mkdir dist/lib && mkdir dist/lib/blockly && yarn run move-html && yarn run rebuild",
         "watch": "tsc -w",
         "lint-ts": "tslint -c tslint.json -p tsconfig.json",
         "lint-es": "eslint src",
