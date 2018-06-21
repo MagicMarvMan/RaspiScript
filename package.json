@@ -5,7 +5,7 @@
     "description": "My Electron application description",
     "main": "dist/index.js",
     "scripts": {
-        "rm-dist": "rm -f -- dist/*.js && rm -f -- dist/*.html && rm -f --dist/*.map",
+        "rm-dist": "rm -f -- dist/*.js && rm -f -- dist/*.html && rm -f -- dist/*.map",
         "load-submodules": "git submodule update",
         "build": "yarn rm-dist && yarn load-submodules && tsc && mkdir dist/lib && mkdir dist/lib/blockly && yarn run move-html",
         "watch": "tsc -w",
@@ -28,6 +28,7 @@
     "author": "MagicMarvMan",
     "license": "MIT",
     "dependencies": {
+        "node-blockly": "1.0.35",
         "electron-compile": "^6.4.2"
     },
     "devDependencies": {

@@ -1,3 +1,5 @@
 
+const Blockly: any = require('node-blockly')
+
 alert("Suc");
-let workspace: any
+let workspace: any = new Blockly.Workspace()
