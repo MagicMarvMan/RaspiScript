@@ -1,3 +1,3 @@
-[submodule "src/lib/blockly"]
-	path = src/lib/blockly
+[submodule "dist/lib/blockly"]
+	path = dist/lib/blockly
 	url = https://github.com/RaspiScript/blockly.git
