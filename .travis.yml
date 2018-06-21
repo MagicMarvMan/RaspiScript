@@ -9,6 +9,8 @@ language: node_js
 node_js:
   - "10"
   - "7"
+  - "8"
+  - "6"
   - iojs
 script:
   - "yarn run build"
