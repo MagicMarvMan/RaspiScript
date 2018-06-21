@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/marvin/.yarn/bin/yarn.js remove libxmljs
+  /usr/local/bin/node /Users/marvin/.yarn/bin/yarn.js add git://github.com/znerol/libxmljs.git#xmlwriter-0.18.0
 
 PATH: 
   /usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/Users/marvin/.cargo/bin:/Users/marvin/.yarn/bin:/Users/marvin/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/marvin/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/apache-maven-3.5.2/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin:/Users/marvin/opt/local/bin:/usr/local/share/dotnet:/Users/marvin/Library/Android/sdk:/Users/marvin/Library/Android/sdk/tools:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/gcc_arm/gcc-arm-none-eabi-7-2017-q4-major/bin/:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
@@ -14,17 +14,19 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/Users/marvin/Documents/RaspiScript/node_modules/dmg-builder/node_modules/base64-js'
+  Error: EACCES: permission denied, mkdir '/Users/marvin/Documents/RaspiScript/node_modules/concat-stream/node_modules'
 
 npm manifest: 
   {
       "name": "raspiscript",
       "productName": "raspiscript",
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": "My Electron application description",
       "main": "dist/index.js",
       "scripts": {
-          "build": "rm -f -r -- dist && tsc && mkdir dist/lib && mkdir dist/lib/blockly && cp -r src/lib/* dist/lib && yarn run move-html",
+          "rm-dist": "rm -f -- dist/*.js && rm -f -- dist/*.html && rm -f -- dist/*.map",
+          "load-submodules": "git submodule update",
+          "build": "yarn rm-dist && yarn load-submodules && tsc && mkdir dist/lib && mkdir dist/lib/blockly && yarn run move-html",
           "watch": "tsc -w",
           "lint-ts": "tslint -c tslint.json -p tsconfig.json",
           "lint-es": "eslint src",
@@ -45,8 +47,8 @@ npm manifest:
       "author": "MagicMarvMan",
       "license": "MIT",
       "dependencies": {
-          "electron-compile": "^6.4.2",
-          "google-blockly": "^1.0.0"
+          "node-blockly": "1.0.35",
+          "electron-compile": "^6.4.2"
       },
       "devDependencies": {
           "babel-plugin-transform-async-to-generator": "6.24.1",

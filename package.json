@@ -5,7 +5,7 @@
     "description": "My Electron application description",
     "main": "dist/index.js",
     "scripts": {
-        "rm-dist": "rm -f -- dist/*.js && rm -f -- dist/*.html && rm -f -- dist/*.map",
+        "rm-dist": "rm -r -f -- dist",
         "load-submodules": "git submodule update",
         "build": "yarn rm-dist && yarn load-submodules && tsc && mkdir dist/lib && mkdir dist/lib/blockly && yarn run move-html",
         "watch": "tsc -w",
@@ -28,8 +28,9 @@
     "author": "MagicMarvMan",
     "license": "MIT",
     "dependencies": {
-        "node-blockly": "1.0.35",
-        "electron-compile": "^6.4.2"
+        "electron-compile": "^6.4.2",
+        "libxmljs": "git://github.com/znerol/libxmljs.git#xmlwriter-0.18.0",
+        "node-blockly": "1.0.35"
     },
     "devDependencies": {
         "babel-plugin-transform-async-to-generator": "6.24.1",
@@ -39,6 +40,7 @@
         "electron-builder": "^20.15.1",
         "electron-packager": "^12.1.0",
         "electron-prebuilt-compile": "2.0.2",
+        "electron-rebuild": "^1.7.3",
         "eslint": "4.19.1",
         "eslint-config-airbnb": "16.1.0",
         "eslint-plugin-import": "2.12.0",
