@@ -6,8 +6,12 @@
   </head>
   <body>
     Well hey there!!!
+
+    <script src="lib/blockly/blockly-compressed.js" onload="javascript:init();"></script>
     <script>
-      require('./renderer.js');
+      function init() {
+        require('./renderer.js');
+      }
     </script>
   </body>
 </html>
