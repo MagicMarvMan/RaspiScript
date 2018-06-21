@@ -1,4 +1,4 @@
-const config = JSON.parse(require('fs').readFileSync('./.compilerc', {encoding: 'utf8'}));
+const config = JSON.parse(require('fs').readFileSync('./.ocompile', {encoding: 'utf8'}));
 const node_env = process.env.NODE_ENV || 'development';
 const mimes = {};
 function merge_config(conf1, conf2) {
