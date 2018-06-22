@@ -23,7 +23,7 @@
         "minify-index": "node-minify --compressor all --input 'dist/index.js' --output 'dist/index.js'",
         "minify-renderer": "node-minify --compressor all --input 'dist/renderer.js' --output 'dist/renderer.js'",
         "minify": "yarn run minify-index && yarn run minify-renderer",
-        "setup": "yarn install",
+        "setup": "yarn add git://github.com/znerol/libxmljs.git#xmlwriter-0.18.0 && yarn install",
         "test": "echo \"Error: No test specified\"",
         "publish": "echo '\"yarn run publish\" is deprecated. Publishing will be done automatically. Skipping.'"
     },
