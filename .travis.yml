@@ -7,9 +7,7 @@ cache:
   yarn: false
 language: node_js
 node_js: "10"
-os:
-  - linux
-  - osx
+os: osx
 script:
   - "yarn run build"
   - "yarn run test"
