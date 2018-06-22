@@ -1,0 +1,20 @@
+machine:
+  xcode:
+    version: 7.3
+
+dependencies:
+
+  pre:
+    - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
+    - sudo apt-get install libpcsclite-dev
+    # workaround for yarn installation issue
+    - curl -o- -L https://yarnpkg.com/install.sh | TERM=xterm bash
+
+  override:
+    - yarn run setup
+
+compile:
+  override:
+    - yarn run build
+    - yarn run package-mac
