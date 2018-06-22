@@ -1,7 +1,7 @@
 {
     "name": "raspiscript",
     "productName": "raspiscript",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "My Electron application description",
     "main": "src/index.ts",
     "postinstall": "electron-builder install-app-deps",
