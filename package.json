@@ -6,7 +6,11 @@
     "main": "src/index.ts",
     "postinstall": "electron-builder install-app-deps",
     "scripts": {
-        "raw-package": "electron-builder .",
+        "package-win": "electron-builder . --windows",
+        "package-mac": "electron-builder . --mac",
+        "package-linux": "electron-builder . --linux",
+        "package-all": "yarn run package-linux && yarn run package-win && yarn run package-mac",
+        "raw-package": "yarn run package-all",
         "rebuild": "electron-rebuild .",
         "rm-dist": "rm -r -f -- dist",
         "load-submodules": "git submodule update",
