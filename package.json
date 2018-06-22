@@ -3,8 +3,10 @@
     "productName": "raspiscript",
     "version": "0.0.1",
     "description": "My Electron application description",
-    "main": "dist/index.js",
+    "main": "src/index.ts",
+    "postinstall": "electron-builder install-app-deps",
     "scripts": {
+        "raw-package": "electron-builder .",
         "rebuild": "electron-rebuild .",
         "rm-dist": "rm -r -f -- dist",
         "load-submodules": "git submodule update",
@@ -15,7 +17,7 @@
         "lint": "yarn run lint-es && yarn run lint-ts",
         "lint-fix": "yarn run lint-es --fix && yarn run lint-ts --fix",
         "start": "yarn run build && electron .",
-        "package": "yarn run build && electron-builder .",
+        "package": "yarn run build && yarn run raw-package",
         "make": "yarn run build && electron-forge make",
         "move-html": "cp src/*.html dist",
         "minify-index": "node-minify --compressor all --input 'dist/index.js' --output 'dist/index.js'",
@@ -31,7 +33,8 @@
     "dependencies": {
         "electron-compile": "^6.4.2",
         "libxmljs": "git://github.com/znerol/libxmljs.git#xmlwriter-0.18.0",
-        "node-blockly": "1.0.35"
+        "node-blockly": "1.0.35",
+        "sense-hat-led": "^1.0.1"
     },
     "devDependencies": {
         "babel-plugin-transform-async-to-generator": "6.24.1",
